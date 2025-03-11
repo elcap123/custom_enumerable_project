@@ -10,7 +10,11 @@ class LinkedList
   def append(value)
     # adds a new node containing value to the end of the list
     list.push(Node.new(value, nil))
-    list[list.length-2].next_node = list.length - 1
+    # update next_node value
+    if list.length > 1
+      list[list.length-2].next_node = list.length - 1
+    end
+    
   end
 
   def prepend(value)
